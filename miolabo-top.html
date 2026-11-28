@@ -225,6 +225,55 @@ header .hnav .sub a:hover{color:var(--blue)}
 .lk3 .ln,.lk3 .ln::after{background:rgb(21,55,92)}
 .svc .btns2{margin-top:8px}
 @media(min-width:1101px){.svc .mn .bd{max-width:560px}.svc .mn .bd p{max-width:480px;line-height:30px}}
+
+/* ===== スマホ（幅767px以下） ===== */
+.bgr,.mnu{display:none}
+@media(max-width:767px){
+ .hd,.hdS{height:72px}.hdS{height:72px}
+ header .logo{left:20px;top:12px;height:48px}header .logo img{height:48px}
+ header .hnav{display:none}
+ .bgr{display:block;position:absolute;right:12px;top:14px;width:44px;height:44px;padding:0;border:0;background:transparent;cursor:pointer}
+ .bgr i{position:absolute;left:10px;right:10px;height:2px;background:var(--blue)}
+ .bgr i:nth-child(1){top:14px}.bgr i:nth-child(2){top:21px}.bgr i:nth-child(3){top:28px}
+ .mnu{position:fixed;inset:0;z-index:60;background:#0c7698;overflow:auto;padding:88px 28px 40px}
+ .mnu.open{display:block}
+ .mnu ul{list-style:none;margin:0;padding:0}
+ .mnu a{display:block;color:#fff;text-decoration:none;font:500 18px/1.4 "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;letter-spacing:2px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.35)}
+ .mnu .sv>a{border-bottom:0;padding-bottom:6px}
+ .mnu .sv ul{border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:12px}
+ .mnu .sv ul a{border-bottom:0;font-size:15px;font-weight:400;padding:10px 0 10px 20px}
+ .mnu .cls{position:absolute;right:12px;top:14px;width:44px;height:44px;padding:0;border:0;background:transparent;cursor:pointer}
+ .mnu .cls::before,.mnu .cls::after{content:"";position:absolute;left:10px;right:10px;top:21px;height:2px;background:#fff;transform:rotate(45deg)}
+ .mnu .cls::after{transform:rotate(-45deg)}
+ /* ヒーロー（黒板なし・最初から白） */
+ .hero{height:490px;min-height:0}
+ .scene{display:none}
+ .kv{left:8vw;top:100px}
+ .kv .cp{font-size:calc(84vw/19)}
+ .kv .kvln{margin-left:calc(84vw/19*1.125)}
+ .bgfx{display:block;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 50%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 50%,transparent 100%)}
+ .bgfx canvas{display:none}
+ .bgfx .sphere{animation:none;left:calc(46vw - 225px);right:auto}
+ /* 見出しの折り返し */
+ .spb{display:inline}
+ .concept .cr h3 br.spb,.strength .shd br.spb{display:inline}
+ /* STRENGTH */
+ .strength{background:#fefcf9}
+ .strength .card{margin:-48px 0 0 0;padding:48px 5% 40px;box-shadow:none}
+ .strength .spa{display:block;margin-top:36px}
+ .strength .spa .it,.strength .spa .it:last-child{flex:none;padding:0 0 22px 28px}
+ .strength .spa .it:last-child{padding-bottom:0}
+ .strength .spa .it::before{top:9px}
+ .strength .spa .it:not(:last-child)::after{display:block;left:5px;right:auto;top:20px;bottom:-9px;width:1px;height:auto}
+ .strength .spa b{font-size:17px;letter-spacing:2px}
+ /* 文章（本文）はCONCEPTと同じ */
+ .concept .cr p,.strength .sbd p,.svc .head .r,.svc p,.ct .tx{font-size:14px;line-height:30px;letter-spacing:1px;color:#3d3d3d}
+ .strength .sbd p{margin:0}
+ /* カウンター上の青いブロック（中央） */
+ .ct .tx br{display:inline}
+ .counter .blk{display:block;left:50%;transform:translateX(-50%);width:59.4%}
+}
+@media(min-width:768px){.spb{display:none}}
 </style>
 </head>
 <body>
@@ -233,14 +282,16 @@ header .hnav .sub a:hover{color:var(--blue)}
 <nav class="hnav"><ul>
 <li class="cur"><a href="#">HOME</a></li><li class="has"><a href="#">サービス</a><ul class="sub"><li><a href="https://shimecava-bw.github.io/nandemoka/nandemoka-page.html">なんでも課</a></li><li><a href="https://shimecava-bw.github.io/mioffice/mioffice-top.html">労務顧問</a></li></ul></li><li><a href="#">会社概要</a></li><li><a href="#">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li>
 </ul></nav>
-
+<button class="bgr" type="button" aria-label="メニュー"><i></i><i></i><i></i></button>
 </header>
 <header class="hdS" id="hdS">
 <a class="logo" href="#"><img alt="M.I.O labo" class="hlogo" height="64"></a>
 <nav class="hnav"><ul>
 <li class="cur"><a href="#">HOME</a></li><li class="has"><a href="#">サービス</a><ul class="sub"><li><a href="https://shimecava-bw.github.io/nandemoka/nandemoka-page.html">なんでも課</a></li><li><a href="https://shimecava-bw.github.io/mioffice/mioffice-top.html">労務顧問</a></li></ul></li><li><a href="#">会社概要</a></li><li><a href="#">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li>
 </ul></nav>
+<button class="bgr" type="button" aria-label="メニュー"><i></i><i></i><i></i></button>
 </header>
+<div class="mnu" id="mnu" aria-hidden="true"><button class="cls" type="button" aria-label="閉じる"></button><ul><li><a href="#">HOME</a></li><li class="sv"><a href="#">サービス</a><ul><li><a href="https://shimecava-bw.github.io/nandemoka/nandemoka-page.html">なんでも課</a></li><li><a href="https://shimecava-bw.github.io/mioffice/mioffice-top.html">労務顧問</a></li></ul></li><li><a href="#">会社概要</a></li><li><a href="#">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
 <section class="hero" id="hero">
 <div class="bgfx" id="bgfx"><div class="sw" id="sw"><div class="sphere"><div class="ink"></div></div></div><canvas id="cv"></canvas></div>
 <svg class="scene" id="scene" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
@@ -308,7 +359,7 @@ header .hnav .sub a:hover{color:var(--blue)}
 <div class="wrap"><div class="row">
 <div class="cl fx fd" style="--d:600ms"><img class="hlogo clogo" alt="M.I.O labo"><h2>CONCEPT</h2><div class="vline"></div></div>
 <div class="cr fx fl" style="--d:900ms">
-<h3>幅広い経験やノウハウ、ネットワークで、<br>経営課題を、M.I.O laboが一手に担います。</h3>
+<h3>幅広い経験やノウハウ、<br class="spb">ネットワークで、<br>経営課題を、M.I.O laboが<br class="spb">一手に担います。</h3>
 <p>事業を経営するなかでは、さまざまな課題が同時に起こります。それをすべて、社内のノウハウや経験だけで解決するのは難しいのが現実です。</p>
 <p>私たちは、数百にわたる企業の経営課題に向き合ってきました。その実績から、貴社の中にはない経験や知恵、ネットワークをお届けできます。</p>
 <p>人事労務をはじめとする管理部門・バックオフィスの業務は、「なんでも課」が一手に担います。社会保険労務士もおりますので、専門的な領域もお任せいただけます。</p>
@@ -319,7 +370,7 @@ header .hnav .sub a:hover{color:var(--blue)}
 <section class="strength" id="strength">
  <div class="card fx fr" style="--d:0ms">
   <h2 class="slb fx fu" style="--d:150ms"><span class="r">STR<i class="svl"></i></span>ENGTH</h2>
-  <h3 class="shd fx fu" style="--d:300ms"><span>経営の困りごとを、</span><span>ひとつの窓口から専門家につなぎます。</span></h3>
+  <h3 class="shd fx fu" style="--d:300ms"><span>経営の困りごとを、</span><span>ひとつの窓口から<br class="spb">専門家につなぎます。</span></h3>
   <div class="sbd fx fu" style="--d:450ms"><p>経営の課題は、法務、税務、労務、資金調達、M＆Aや事業承継など、分野をまたいで起こります。ミオラボには、社会保険労務士、税理士、弁護士、司法書士などの士業と、各業界に精通したプロフェッショナルがいます。専門部署や担当者がいない場合でも、ミオラボが窓口になり、必要な専門家とともに課題の解決まで支えます。専門的な判断が必要なことは士業が、日々のバックオフィス業務はミオラボが。入り口がひとつなので、経営者が本来の業務に向き合う時間を持てます。</p></div>
   <div class="spa fx fu" style="--d:200ms;transition-duration:.6s"><div class="it"><b>社会保険労務士</b></div><div class="it"><b>税理士</b></div><div class="it"><b>弁護士</b></div><div class="it"><b>司法書士</b></div><div class="it"><b>行政書士</b></div></div>
   <div class="splus fx fu" style="--d:300ms;transition-duration:.6s"><i>＋</i></div>
@@ -355,7 +406,7 @@ header .hnav .sub a:hover{color:var(--blue)}
 <section class="ct" id="contact">
  <div class="in">
   <h2 class="en">CONTACT</h2>
-  <p class="tx">人事労務・バックオフィスから人事コンサルティングまで、<br>まずはお気軽にご相談ください。</p>
+  <p class="tx">人事労務・バックオフィスから<br class="spb">人事コンサルティングまで、<br>まずはお気軽にご相談ください。</p>
   <a class="btn" href="#">お問い合わせ</a>
  </div>
 </section>
@@ -488,7 +539,7 @@ function start(){
   prep(); calcEnd(); TOTAL=modeInit(); layout();
   var P=new URLSearchParams(location.search), q=P.get('t');
   if(P.get('stk')){window.__stk=true;} if(q!==null){ hdNav.style.transition='none'; render(parseFloat(q)); var sy=P.get('sy'); if(sy){window.scrollTo(0,+sy); onScroll();} }
-  else play();
+  else if(window.matchMedia&&matchMedia('(max-width:767px)').matches){render(TOTAL+1)} else play();
 }
 var started=false;function go(){if(started)return;started=true;start();}
 if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go);setTimeout(go,2500)}else{go()}
@@ -592,6 +643,16 @@ if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go);setTimeou
 var c=document.getElementById('contact');
 function f(){c.classList.toggle('red',c.getBoundingClientRect().bottom<window.innerHeight*1.1)}
 window.addEventListener('scroll',f,{passive:true});window.addEventListener('resize',f);f();
+})();
+</script>
+<script>
+(function(){var m=document.getElementById('mnu');if(!m)return;
+function o(){m.classList.add('open');m.setAttribute('aria-hidden','false');document.documentElement.style.overflow='hidden'}
+function c(){m.classList.remove('open');m.setAttribute('aria-hidden','true');document.documentElement.style.overflow=''}
+document.querySelectorAll('.bgr').forEach(function(b){b.addEventListener('click',o)});
+m.querySelector('.cls').addEventListener('click',c);
+m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',c)});
+window.addEventListener('resize',function(){if(innerWidth>767)c()});
 })();
 </script>
 </body>
